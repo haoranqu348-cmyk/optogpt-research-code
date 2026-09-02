@@ -1,0 +1,258 @@
+schema_version: 1
+band_nm: [400, 1100]
+policy: >-
+  Formal training requires traceable deposited-film numerical n and k over the
+  entire band. Bulk/crystal data and isolated refractive-index values are not
+  silently substituted. Unknown fields remain explicit manufacturing gaps.
+required_references:
+  - doi: 10.1116/1.4935450
+    role: AlF3 ALD ultraviolet thin-film evidence; insufficient alone for the full design band
+  - doi: 10.1002/admi.202400372
+    role: metal-fluoride ALD process and manufacturing review
+  - doi: 10.1021/acsami.9b03125
+    role: wide-angle benchmark only; its porous layer is excluded
+  - doi: 10.3390/en13102631
+    role: antireflection material review
+materials:
+  AlF3:
+    gate: awaiting_numeric_dispersion
+    priority: 1
+    source: Vacuum-UV spectroscopic ellipsometry of plasma ALD films, 140-2275 nm
+    dois: [10.1116/1.4935450, 10.1063/1.4998577, 10.1116/6.0001468]
+    deposition: plasma ALD using trimethylaluminum and SF6 plasma; comparison thermal/PEALD at 100 C
+    sample_form: thin_film
+    numerical_nk_coverage_nm: null
+    reported_n_k: n=1.35 at 633 nm; k<1e-4 above 300 nm for the Vos et al. films
+    absorption_edge: ultraviolet; Hennessy et al. specifically audits UV optical properties
+    max_k_400_1100: <1e-4 reported, not independently tabulated here
+    hygroscopicity: lower moisture sensitivity than alkali fluorides, but fluoride-film environment testing remains required
+    solubility: sparingly soluble; verify deposited-film behavior
+    chemical_stability: process-dependent; fluorine loss/contamination and Al-rich clusters are documented risks
+    film_stress: not quantitatively available in the retrieved optical source
+    adhesion: substrate/process dependent; not quantitatively available in the retrieved optical source
+    deposition_temperature: 50-300 C in Vos et al.; 100 C thermal/PEALD comparison
+    manufacturing_risk: SF6 plasma and/or HF chemistry, impurity and stoichiometry control, missing downloadable full-band numeric dispersion
+  Na3AlF6:
+    gate: conditional_candidate
+    priority: 1
+    source: preliminary evaporated cryolite overcoat characterization for far-UV mirrors
+    dois: [10.1117/12.2678149]
+    deposition: physical-vapor deposited overcoat; complete process details not recovered
+    sample_form: thin_film
+    numerical_nk_coverage_nm: null
+    reported_n_k: low visible-to-UV index asserted, but no full 400-1100 nm numeric table located
+    absorption_edge: far ultraviolet; full-band deposited-film absorption not established
+    max_k_400_1100: unknown
+    hygroscopicity: moisture/durability risk requires direct environmental testing
+    solubility: water solubility and leaching are durability concerns
+    chemical_stability: conditional; environmental durability study is still central to the cited work
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: unknown
+    manufacturing_risk: numeric dispersion unavailable; stoichiometry, moisture resistance, and reproducibility unresolved
+  NaF:
+    gate: conditional_candidate
+    source: critically evaluated alkali-halide Sellmeier data
+    dois: [10.1063/1.555536]
+    deposition: not applicable to retrieved dataset
+    sample_form: bulk_or_crystal
+    numerical_nk_coverage_nm: n only, 150-17000
+    reported_n_k: bulk n formula; no deposited-film k table
+    absorption_edge: ultraviolet; deposited-film edge not verified
+    max_k_400_1100: unknown
+    hygroscopicity: high
+    solubility: readily water soluble
+    chemical_stability: poor for unprotected ambient optical service
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: unknown
+    manufacturing_risk: water sensitivity and bulk-to-film mismatch; exclude from formal training
+  LiF:
+    gate: conditional_candidate
+    source: critically evaluated alkali-halide Sellmeier data; ALD environmental study exists
+    dois: [10.1063/1.555536, 10.3390/inorganics6020046]
+    deposition: ALD demonstrated at 100-150 C, but retrieved full-band numeric data are bulk n
+    sample_form: bulk_or_crystal_for_numeric_data
+    numerical_nk_coverage_nm: n only, 100-11000
+    reported_n_k: bulk n formula; no qualifying deposited-film 400-1100 nm n/k table
+    absorption_edge: far ultraviolet
+    max_k_400_1100: unknown for deposited film
+    hygroscopicity: high; environmental sensitivity explicitly studied for ALD films
+    solubility: water soluble
+    chemical_stability: conditional; protection and humidity qualification needed
+    film_stress: roughness increases at >=150 C in the cited ALD process
+    adhesion: substrate dependent; not quantified in retrieved source
+    deposition_temperature: 100-150 C ALD
+    manufacturing_risk: moisture, roughness/effective-index loss, and bulk-to-film mismatch
+  CaF2:
+    gate: blocked_bulk_only
+    source: Malitson bulk optical-property redetermination
+    dois: [10.1364/AO.2.001103]
+    deposition: not applicable to retrieved dataset
+    sample_form: bulk_crystal
+    numerical_nk_coverage_nm: n only, 230-9700
+    reported_n_k: bulk Sellmeier n; no qualifying thin-film k
+    absorption_edge: ultraviolet
+    max_k_400_1100: unknown for deposited film
+    hygroscopicity: low relative to alkali fluorides
+    solubility: slightly soluble
+    chemical_stability: generally stable crystal; deposited-film durability not established here
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: unknown
+    manufacturing_risk: bulk-to-film density and morphology mismatch
+  SrF2:
+    gate: blocked_band_mismatch
+    source: deposited-film optical constants are available only in the 25-780 eV range
+    dois: [10.1063/1.4800099]
+    deposition: room-temperature thin-film deposition
+    sample_form: thin_film
+    numerical_nk_coverage_nm: approximately 1.6-49.6
+    reported_n_k: does not overlap the required visible/NIR band
+    absorption_edge: not established for deposited film over 400-1100 nm
+    max_k_400_1100: unknown
+    hygroscopicity: moisture sensitivity requires qualification
+    solubility: slightly soluble
+    chemical_stability: conditional
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: room temperature in retrieved film source
+    manufacturing_risk: no qualifying band coverage
+  BaF2:
+    gate: blocked_bulk_only
+    source: Malitson bulk optical-property data
+    dois: [10.1364/JOSA.54.000628]
+    deposition: not applicable to retrieved dataset
+    sample_form: bulk_crystal
+    numerical_nk_coverage_nm: n only, 265.2-10346
+    reported_n_k: bulk Sellmeier n; no qualifying thin-film k
+    absorption_edge: ultraviolet
+    max_k_400_1100: unknown for deposited film
+    hygroscopicity: moisture sensitive relative to stable oxides
+    solubility: water soluble to a limited but durability-relevant degree
+    chemical_stability: conditional
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: unknown
+    manufacturing_risk: bulk-to-film mismatch and environmental durability
+  ScF3:
+    gate: blocked_no_traceable_full_band_data
+    source: no qualifying deposited-film 400-1100 nm numerical n/k source located
+    dois: []
+    deposition: unknown
+    sample_form: unknown
+    numerical_nk_coverage_nm: null
+    reported_n_k: none accepted
+    absorption_edge: unknown for deposited film
+    max_k_400_1100: unknown
+    hygroscopicity: fluoride-film moisture qualification required
+    solubility: unknown for deposited film
+    chemical_stability: unknown
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: unknown
+    manufacturing_risk: missing optical and process evidence
+  YF3:
+    gate: blocked_no_traceable_full_band_data
+    source: no qualifying deposited-film 400-1100 nm numerical n/k source located
+    dois: []
+    deposition: unknown
+    sample_form: unknown
+    numerical_nk_coverage_nm: null
+    reported_n_k: none accepted
+    absorption_edge: unknown for deposited film
+    max_k_400_1100: unknown
+    hygroscopicity: fluoride-film moisture qualification required
+    solubility: low bulk solubility; film durability not established
+    chemical_stability: unknown for candidate process
+    film_stress: unknown
+    adhesion: unknown
+    deposition_temperature: unknown
+    manufacturing_risk: missing full-band numerical film data
+  LaF3:
+    gate: blocked_incomplete_k_band
+    source: e-beam evaporated film n model covers 0.4-12 um; retrieved k table starts in mid-IR
+    dois: [10.1364/AO.59.000A40, 10.1364/OME.7.000989]
+    deposition: e-beam evaporation at 120 C; separate 48 nm tungsten-boat evaporation at 250 C
+    sample_form: thin_film
+    numerical_nk_coverage_nm: n 400-12000; qualifying k does not cover full requested band
+    reported_n_k: dispersive film n available; visible/NIR k table incomplete
+    absorption_edge: ultraviolet
+    max_k_400_1100: not established by retrieved numeric table
+    hygroscopicity: lower than alkali fluorides but humidity qualification still required
+    solubility: low
+    chemical_stability: process dependent
+    film_stress: unknown
+    adhesion: substrate/process dependent
+    deposition_temperature: 120 C for Amotchkina et al.; 250 C for Rodriguez-de Marcos et al.
+    manufacturing_risk: incomplete k coverage and evaporation-process dependence
+  ZrO2:
+    gate: blocked_bulk_only
+    source: variable-angle spectroscopic ellipsometry of bulk cubic ZrO2
+    dois: [10.1016/j.tsf.2004.02.028]
+    deposition: not applicable to retrieved dataset
+    sample_form: bulk
+    numerical_nk_coverage_nm: broad n/k, but bulk
+    reported_n_k: oscillator-model bulk optical constants
+    absorption_edge: ultraviolet
+    max_k_400_1100: not accepted as film value
+    hygroscopicity: low
+    solubility: insoluble
+    chemical_stability: high
+    film_stress: process dependent, potentially significant in dense high-index oxide films
+    adhesion: generally process/substrate dependent
+    deposition_temperature: unknown for a qualifying film source
+    manufacturing_risk: high-index material cannot close the air-side low-index gap; bulk-to-film mismatch
+  Nb2O5:
+    gate: approved_physics_search
+    source: refractiveindex.info raw Franta dataset; ellipsometry plus spectrophotometry on five sputtered films
+    dois: [10.1016/j.optmat.2024.116133]
+    deposition: room-temperature magnetron sputtering
+    sample_form: thin_film
+    numerical_nk_coverage_nm: 120.051-1000000 (raw table; interpolation is restricted to 400-1100)
+    reported_n_k: tabulated dispersive n/k from heterogeneous multi-sample processing
+    absorption_edge: strong UV absorption below the visible edge
+    max_k_400_1100: computed by interpolation script
+    hygroscopicity: low
+    solubility: insoluble
+    chemical_stability: generally high
+    film_stress: sputter-process dependent; requires witness-film measurement
+    adhesion: generally good but substrate/cleaning dependent
+    deposition_temperature: room temperature in source
+    manufacturing_risk: high index only expands admittance matching freedom; does not solve low-index gap
+    raw_file: raw/Nb2O5_Franta.yml
+  Y2O3:
+    gate: blocked_bulk_only
+    source: Nigara optical constants, without retrieved deposited-film provenance
+    dois: [10.1143/JJAP.7.404]
+    deposition: not established for retrieved numeric data
+    sample_form: bulk_or_unspecified
+    numerical_nk_coverage_nm: n formula 250-9600; k unavailable
+    reported_n_k: n only
+    absorption_edge: ultraviolet
+    max_k_400_1100: unknown for deposited film
+    hygroscopicity: low to moderate surface hydroxylation risk
+    solubility: insoluble
+    chemical_stability: generally high
+    film_stress: process dependent
+    adhesion: process dependent
+    deposition_temperature: unknown
+    manufacturing_risk: missing thin-film k and process-specific dispersion
+  Sc2O3:
+    gate: approved_physics_search
+    source: refractiveindex.info raw Belosludtsev stoichiometric-film dataset
+    dois: [10.1016/j.apsusc.2017.08.068]
+    deposition: reactive magnetron sputtering
+    sample_form: thin_film
+    numerical_nk_coverage_nm: 230-1200
+    reported_n_k: tabulated n/k for a stoichiometric 270+/-5 nm film on SiO2
+    absorption_edge: ultraviolet; k decreases strongly through visible/NIR
+    max_k_400_1100: computed by interpolation script
+    hygroscopicity: low
+    solubility: insoluble
+    chemical_stability: generally high
+    film_stress: not quantified in retrieved source; reactive-sputter stoichiometry dependent
+    adhesion: not quantified in retrieved source
+    deposition_temperature: not stated in retrieved database metadata
+    manufacturing_risk: high index only; stoichiometry and reactive-sputter reproducibility
+    raw_file: raw/Sc2O3_Belosludtsev.yml

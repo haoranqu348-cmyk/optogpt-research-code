@@ -1,0 +1,55 @@
+# Python and IDE artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/
+.venv/
+venv/
+
+# Model checkpoints and generated training artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pkl
+*.npz
+*.npy
+*.h5
+*.hdf5
+model/
+models/
+checkpoints/
+*_checkpoints*/
+results/
+validation_results/
+audit_results/
+*_output/
+*_outputs/
+report.log
+*.log
+
+# Generated or proprietary datasets
+data/
+data_*/
+dielectric_60deg_s/data/
+dielectric_60deg_s/models/
+joint_sp/build_sources/
+joint_sp/formal_checkpoints_*/
+joint_sp/phase1_pilot_results/
+joint_sp/smoke_*/
+joint_sp/validation_results/
+joint_sp/wide_angle_*/
+tools/predictor/inputs/
+tools/predictor/outputs/
+
+# Local archives and diagnostics
+*.zip
+*.tar.gz
+*.tmp
+*_out.txt
+*_err.txt
+test_result.txt
+torch_ver.txt

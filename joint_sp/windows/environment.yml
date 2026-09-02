@@ -1,0 +1,16 @@
+name: optogpt-joint-sp
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.2.2
+  - pytorch-cuda=12.1
+  - numpy=1.23.5
+  - scipy=1.10.1
+  - pandas=1.5.3
+  - tqdm
+  - pip
+  - pip:
+      - tmm==0.1.8
